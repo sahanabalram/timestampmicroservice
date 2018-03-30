@@ -14,6 +14,10 @@ module.exports = function (app) {
             var naturalDate = new Date(value);
             naturalDate = naturalDate.toLocaleDateString("en-us",naturalDateFormat);
             var unixDate = new Date(value).getTime()/ 1000;
+        } else {
+            var unixDate = value;
+            var naturalDate = new Date(value * 1000);
+            naturalDate.toLocaleDateString("en-us",naturalDateFormat);
         }
         response.json({unix: unixDate, natural: naturalDate});
     });
