@@ -11,9 +11,9 @@ module.exports = function (app) {
         };
 // if its not a number then it is a string value and need to create a natural date
         if(isNaN(value)){
-            let naturalDate = new Date(value);
+            var naturalDate = new Date(value);
             naturalDate = naturalDate.toLocaleDateString("en-us",naturalDateFormat);
-            let unixDate = new Date(value).getTime()/ 1000;
+            var unixDate = new Date(value).getTime()/ 1000;
         }
         response.json({unix: unixDate, natural: naturalDate});
     });
