@@ -1,6 +1,6 @@
 module.exports = function (app) {
     // GET call to return JSON that formats natural and unix date
-    app.get("/timestamp-microservice-sb.herokuapp.com/:value", function (request, response, next) { 
+    app.get("/date/:value", function (request, response, next) { 
         // Gets the request for data for date
         let value = request.params.value;
         // Formating date in natural date view
